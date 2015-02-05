@@ -7,7 +7,7 @@ import scala.tools.nsc.symtab.BrowsingLoaders
 
 trait InteractiveScaladocAnalyzer extends interactive.InteractiveAnalyzer with ScaladocAnalyzer {
     val global : Global
-    override def newTyper(context: Context) = new Typer(context) with InteractiveTyper with ScaladocTyper {
+    override def newTyper(context: Context) = new DefaultTyper(context) with InteractiveTyper with ScaladocTyper {
       override def canAdaptConstantTypeToLiteral = false
     }
   }
